@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+nav {
+  background-color: #eee;
+  padding: 25px 50px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  padding: 20px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+/* Cart  */
+
+.cart {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cart-info {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.cart-info p {
+  margin-right: 20px;
+}
+
+.cart-icon {
+  color: #555;
+  font-size: 25px;
+}
+
+.cart-notif {
+  background-color: red;
   color: white;
+  padding: 3px 7px;
+  border-radius: 50%;
+  font-size: 14px;
+
+  position: absolute;
+  top: -12px;
+  right: -10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Cart Modal  */
+
+.cart-modal {
+  background-color: #f7f7ff;
+  border: 1px solid #7878f3;
+  width: 25%;
+  padding: 20px;
+  border-radius: 7px;
+
+  position: absolute;
+  right: 3%;
+  top: 8%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Product Card  */
+
+.product-card {
+  padding: 15px 20px;
+  background-color: #eeeeff;
+  border-radius: 8px;
+}
+
+.product-card__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.primary-button {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #eeeecc;
+  cursor: pointer;
+}
+
+.product-card__quantity {
+  margin-top: 4px;
+  color: #777;
+}
+
+/* Utility Classes  */
+
+.mb-4:not(:last-child) {
+  margin-bottom: 10px;
 }
