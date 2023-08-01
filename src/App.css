@@ -107,6 +107,33 @@ nav {
   color: #777;
 }
 
+.product-card__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+
+  margin-top: 12px;
+}
+
+.product-card__controls button,
+.product-card__controls-quantity {
+  background-color: #dedeff;
+}
+
+.product-card__controls button {
+  height: 35px;
+  width: 35px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.product-card__controls-quantity {
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+
 /* Utility Classes  */
 
 .mb-4:not(:last-child) {

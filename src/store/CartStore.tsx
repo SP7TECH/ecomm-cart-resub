@@ -57,6 +57,46 @@ class CartStore extends StoreBase {
     this.trigger();
   }
 
+  incrementQuantity(prod: IProduct) {
+    let productIndexInItems = this.items.findIndex(
+      (product) => product.name === prod.name
+    );
+    let productIndex = this.addedItems.findIndex(
+      (product) => product.name === prod.name
+    );
+    this.items[productIndexInItems] = {
+      name: this.items[productIndexInItems].name,
+      price: this.items[productIndexInItems].price,
+      qty: this.items[productIndexInItems].qty - 1,
+    };
+    this.addedItems[productIndex] = {
+      name: this.addedItems[productIndex].name,
+      price: this.addedItems[productIndex].price,
+      qty: this.addedItems[productIndex].qty + 1,
+    };
+    this.trigger();
+  }
+
+  decrementQuantity(prod: IProduct) {
+    let productIndexInItems = this.items.findIndex(
+      (product) => product.name === prod.name
+    );
+    let productIndex = this.addedItems.findIndex(
+      (product) => product.name === prod.name
+    );
+    this.items[productIndexInItems] = {
+      name: this.items[productIndexInItems].name,
+      price: this.items[productIndexInItems].price,
+      qty: this.items[productIndexInItems].qty + 1,
+    };
+    this.addedItems[productIndex] = {
+      name: this.addedItems[productIndex].name,
+      price: this.addedItems[productIndex].price,
+      qty: this.addedItems[productIndex].qty - 1,
+    };
+    this.trigger();
+  }
+
   resetCart() {
     this.addedItems = [];
     this.trigger();
