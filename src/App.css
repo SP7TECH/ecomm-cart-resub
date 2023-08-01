@@ -17,13 +17,6 @@ nav {
   justify-content: space-between;
 }
 
-main {
-  padding: 20px 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
-}
-
 /* Cart  */
 
 .cart {
@@ -70,15 +63,29 @@ main {
   position: absolute;
   right: 3%;
   top: 8%;
+  z-index: 9999;
+}
+
+/* Product Container  */
+
+.product-container {
+  padding: 20px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.product-form {
+  background-color: #f7f7ff;
+  border-radius: 5px;
+  padding: 20px 50px;
+  margin: 20px 50px;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Product Card  */
-
-.product-card {
-  padding: 15px 20px;
-  background-color: #eeeeff;
-  border-radius: 8px;
-}
 
 .product-card__info {
   display: flex;
