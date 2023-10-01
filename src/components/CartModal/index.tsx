@@ -22,18 +22,6 @@ class CartModal extends ComponentBase<{}, ItemInfo> {
 
   handleQuantityIncrement(prod: IProduct) {
     if (this.checkOutOfStock(prod)) {
-      <ToastContainer
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />;
       return toast("Out of Stock!", {
         position: "bottom-center",
         autoClose: 5000,
@@ -50,18 +38,6 @@ class CartModal extends ComponentBase<{}, ItemInfo> {
 
   handleQuantityDecrement(prod: IProduct) {
     if (this.checkOutOfStock(prod)) {
-      <ToastContainer
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />;
       return toast("Out of Stock!", {
         position: "bottom-center",
         autoClose: 5000,

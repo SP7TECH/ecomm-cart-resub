@@ -2,6 +2,7 @@ import { FormControl, TextField, Button, Typography } from "@material-ui/core";
 import React from "react";
 import CartStore from "../../store/CartStore";
 import theme from "../../theme";
+import { toast } from "react-toastify";
 
 type IProduct = { name: string; price: number; qty: number };
 
@@ -13,6 +14,22 @@ class ProductForm extends React.Component {
   };
 
   handleCreateProduct(prod: IProduct) {
+    if (
+      this.state.productName === "" ||
+      this.state.price === 0 ||
+      this.state.qty === 0
+    )
+      return toast("Please fill all the fields", {
+        position: "bottom-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
     CartStore.createProduct(prod);
   }
 

@@ -14,18 +14,6 @@ interface CartInfo {
 class Products extends ComponentBase<{}, CartInfo> {
   handleClick(prod: IProduct) {
     if (prod.qty === 0) {
-      <ToastContainer
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />;
       return toast("Out of Stock!", {
         position: "bottom-center",
         autoClose: 5000,
